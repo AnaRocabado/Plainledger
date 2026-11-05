@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ---- Build: compile and package. Tests run in CI (they need Docker for Testcontainers).
-FROM eclipse-temurin:21-jdk-alpine AS build
+FROM eclipse-temurin:25-jdk-alpine AS build
 WORKDIR /workspace
 COPY .mvn/ .mvn/
 COPY mvnw pom.xml ./
@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/root/.m2 \
 
 # ---- Runtime: JRE only, non-root. Layers are ordered from least to most frequently changed,
 # so a code change rebuilds only the small application layer.
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 RUN addgroup -S plainledger && adduser -S plainledger -G plainledger
 WORKDIR /app
 COPY --from=build /workspace/target/extracted/dependencies/ ./
