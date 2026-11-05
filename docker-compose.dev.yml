@@ -1,0 +1,6 @@
+# Development override: publish PostgreSQL on localhost so the backend can run from an IDE.
+# Used by `make dev-db`. Not part of `make up`, so a local PostgreSQL never conflicts with it.
+services:
+  db:
+    ports:
+      - "127.0.0.1:5432:5432"

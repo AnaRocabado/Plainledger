@@ -1,0 +1,54 @@
+# The whole system with one command: `make up`, then open http://localhost:3000.
+# Credentials are local-only defaults; override them in a .env file (see .env.example).
+name: plainledger
+
+services:
+  db:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: plainledger
+      POSTGRES_USER: ${POSTGRES_USER:-plainledger}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-plainledger}
+    volumes:
+      # PostgreSQL 18 images keep their data under /var/lib/postgresql/18.
+      - db-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d plainledger"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build: ./backend
+    image: plainledger-backend:local
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/plainledger
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-plainledger}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-plainledger}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      # Actuator answers 503 when any component (such as the database) is down; wget fails on it.
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/actuator/health"]
+      interval: 3s
+      timeout: 3s
+      start_period: 60s
+      retries: 40
+
+  web:
+    build: ./frontend
+    image: plainledger-web:local
+    ports:
+      - "${WEB_PORT:-3000}:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  db-data:
