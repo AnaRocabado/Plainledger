@@ -2,7 +2,7 @@
 id: "001"
 title: Foundations
 prefix: FOUND
-status: draft
+status: in-progress
 ---
 
 # 001 — Foundations
@@ -63,3 +63,4 @@ None.
 | Date | Change |
 |---|---|
 | 2026-11-04 | Draft |
+| 2026-11-04 | In progress: implemented under the owner's Phase 1 go-ahead; owner review of the spec pending |

@@ -4,7 +4,7 @@ Plan: [plan.md](plan.md)
 
 Each task is one commit. Tick a task only when its checks are green.
 
-- [ ] **T1** — Scaffold the backend: Spring Boot app, static analysis, test infrastructure (`@Verifies`, traceability listener), architecture rules with fixtures
+- [x] **T1** — Scaffold the backend: Spring Boot app, static analysis, test infrastructure (`@Verifies`, traceability listener), architecture rules with fixtures
   - Covers: FOUND-AC-03, FOUND-AC-04
   - Done when: `./mvnw verify` passes; ArchitectureTest proves each rule catches its fixture violation
 - [ ] **T2** — Add the API conventions: Problem Details and the decimal JSON module
