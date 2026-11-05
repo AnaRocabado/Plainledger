@@ -16,7 +16,7 @@ Each task is one commit. Tick a task only when its checks are green.
 - [x] **T4** — Scaffold the frontend: Vite React TS, Vitest, oxlint, Prettier, app shell
   - Covers: FOUND-AC-08
   - Done when: `npm run check` passes
-- [ ] **T5** — Add the traceability check with self-tests
+- [x] **T5** — Add the traceability check with self-tests
   - Covers: FOUND-AC-09
   - Done when: `node --test tools/traceability` passes; `make traceability` prints the matrix
 - [ ] **T6** — Add the container setup: Dockerfiles, Nginx, Compose, Makefile, smoke tests
