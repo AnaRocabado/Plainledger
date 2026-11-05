@@ -7,7 +7,7 @@ Each task is one commit. Tick a task only when its checks are green.
 - [x] **T1** — Scaffold the backend: Spring Boot app, static analysis, test infrastructure (`@Verifies`, traceability listener), architecture rules with fixtures
   - Covers: FOUND-AC-03, FOUND-AC-04
   - Done when: `./mvnw verify` passes; ArchitectureTest proves each rule catches its fixture violation
-- [ ] **T2** — Add the API conventions: Problem Details and the decimal JSON module
+- [x] **T2** — Add the API conventions: Problem Details and the decimal JSON module
   - Covers: FOUND-AC-05, FOUND-AC-06, FOUND-AC-07
   - Done when: web-layer and unit tests pass
 - [ ] **T3** — Add the health integration test (Testcontainers) and Actuator configuration
