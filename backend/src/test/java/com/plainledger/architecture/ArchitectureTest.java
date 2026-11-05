@@ -89,8 +89,9 @@ class ArchitectureTest {
             assertViolation(
                     ArchitectureRules.NO_BIG_DECIMAL_FROM_DOUBLE,
                     "bigdecimal",
-                    "PriceParser.fromConstructor",
-                    "PriceParser.fromValueOf");
+                    "PriceParser.fromConstructor(double)",
+                    "PriceParser.fromConstructorWithContext(double)",
+                    "PriceParser.fromValueOf(double)");
         }
     }
 
