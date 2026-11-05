@@ -1,0 +1,25 @@
+# OS / editors
+.DS_Store
+.idea/
+*.iml
+.vscode/
+!.vscode/extensions.json
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+
+# Claude Code local (personal) settings; project settings are committed
+.claude/settings.local.json
+
+# Build output and test results
+build/
+target/
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+evidence/
