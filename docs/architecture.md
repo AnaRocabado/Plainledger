@@ -126,7 +126,7 @@ Spring Session tables are omitted. Purchases and allocations have no tables: the
 ```mermaid
 flowchart LR
     pr["push / PR"] --> be["backend<br/>Spotless · Error Prone<br/>unit · ArchUnit · Testcontainers ITs"]
-    pr --> fe["frontend<br/>ESLint · Prettier · tsc<br/>Vitest"]
+    pr --> fe["frontend<br/>oxlint · Prettier · tsc<br/>Vitest"]
     pr --> tools["tools<br/>traceability self-tests"]
     pr --> stack["compose stack<br/>build images · make up<br/>smoke tests"]
     be & fe & tools & stack --> trace["traceability gate<br/>AC → passing tests"]

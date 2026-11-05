@@ -44,7 +44,7 @@ After all suites run, `make traceability` (and the CI gate) builds the AC → pa
 |---|---|
 | Spotless (palantir-java-format) | Java code is not formatted |
 | Error Prone | Bug patterns are found, including `BigDecimal.equals` and `BigDecimal` built from a double literal |
-| ESLint, Prettier, `tsc --noEmit` | Lint errors, unformatted files, type errors |
+| oxlint, Prettier, `tsc -b` | Lint errors or warnings, unformatted files, type errors |
 | Unit, property, architecture, web, integration tests | Any test fails |
 | Stack smoke tests | The composed system does not start or is unhealthy |
 | Traceability | An AC of a `done` spec lacks a passing test; a test references an unknown AC |

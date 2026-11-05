@@ -13,7 +13,7 @@ Each task is one commit. Tick a task only when its checks are green.
 - [ ] **T3** — Add the health integration test (Testcontainers) and Actuator configuration
   - Covers: FOUND-AC-02
   - Done when: `HealthIT` passes where Docker is available (CI)
-- [ ] **T4** — Scaffold the frontend: Vite React TS, Vitest, ESLint, Prettier, app shell
+- [x] **T4** — Scaffold the frontend: Vite React TS, Vitest, oxlint, Prettier, app shell
   - Covers: FOUND-AC-08
   - Done when: `npm run check` passes
 - [ ] **T5** — Add the traceability check with self-tests

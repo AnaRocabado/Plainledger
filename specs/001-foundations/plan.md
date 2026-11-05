@@ -39,7 +39,7 @@ Makefile            up, down, reset, logs, verify, traceability, smoke, fmt
 ### Frontend
 
 - Vite + React + TypeScript strict. Vitest + Testing Library, JUnit reporter to `test-results/junit.xml`.
-- ESLint (the Vite template's config), Prettier, `tsc --noEmit`.
+- oxlint (the current Vite template's linter, with warnings as errors), Prettier, `tsc -b` (no emit).
 - `npm run check` runs all of them.
 
 ### Containers

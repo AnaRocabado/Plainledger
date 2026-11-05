@@ -36,7 +36,7 @@ Builds on: NFR-01 (one command), NFR-03 (hermetic tests), NFR-04 (traceable qual
 - **FR-6** — The web app shows an application shell with the product name and its guiding principle.
 - **FR-7** — A traceability check maps every AC to the tests that verify it, from test results, and fails as described in ADR-0009.
 - **FR-8** — CI runs on every push and pull request: backend build and tests, frontend checks and tests, tool tests, a smoke test of the composed system, the traceability gate, and CodeQL. Images are pushed to GHCR from `main` only.
-- **FR-9** — Static analysis fails the build: Spotless and Error Prone (backend); ESLint, Prettier and the TypeScript compiler (frontend).
+- **FR-9** — Static analysis fails the build: Spotless and Error Prone (backend); oxlint, Prettier and the TypeScript compiler (frontend).
 - **NFR-1** — Containers run as non-root users. Base images exist for `amd64` and `arm64`.
 - **NFR-2** — No secrets in the repository. Local default credentials are documented as local-only and overridable by environment variables.
 
@@ -64,3 +64,4 @@ None.
 |---|---|
 | 2026-11-04 | Draft |
 | 2026-11-04 | In progress: implemented under the owner's Phase 1 go-ahead; owner review of the spec pending |
+| 2026-11-04 | FR-9: oxlint instead of ESLint, following the current official Vite template |
